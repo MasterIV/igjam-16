@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://clmqnchetb318"]
+[gd_scene load_steps=3 format=3 uid="uid://clmqnchetb318"]
 
 [ext_resource type="Texture2D" uid="uid://b3fr8w56rw6cs" path="res://assets/menu/menu_bg.png" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://6rrhaspi8lwr" path="res://scenes/container.gd" id="2_vjb58"]
 
-[node name="Menu" type="CharacterBody2D"]
+[node name="menu" type="Node2D"]
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(583, 376)
 texture = ExtResource("1_yqeox")
+
+[node name="Container" type="Container" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_vjb58")
