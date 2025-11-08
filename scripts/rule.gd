@@ -17,6 +17,7 @@ var opposite_direction = {
 }
 
 @export var icon : TextureRect;
+@onready var progress = $ProgressBar;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,3 +31,6 @@ func _process(delta: float) -> void:
 func _on_button_button_up() -> void:
 	direction = opposite_direction[direction];
 	icon.texture.region = texture_regions[direction];
+
+func set_progress(value: float) -> void:
+	progress.value = value
