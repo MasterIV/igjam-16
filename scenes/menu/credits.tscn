@@ -1,0 +1,129 @@
+[gd_scene load_steps=15 format=3 uid="uid://c7yn4kugdbbbb"]
+
+[ext_resource type="Script" uid="uid://p3sjfxsnjmxm" path="res://scenes/menu/credits.gd" id="1_0l22u"]
+[ext_resource type="FontFile" uid="uid://c4lmk3urfr8w0" path="res://assets/menu/Robot_Font.otf" id="1_ff4am"]
+[ext_resource type="Texture2D" uid="uid://rfygwpf1hn6t" path="res://assets/konservenfabrik.png" id="2_0l22u"]
+
+[sub_resource type="Theme" id="Theme_drpar"]
+Label/font_sizes/font_size = 45
+Label/fonts/font = ExtResource("1_ff4am")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s65u"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(0, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wobx1"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(284, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh8hr"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(568, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev03l"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(852, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yft3"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(1136, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfssv"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(1420, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsnbq"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(1704, 0, 284, 212)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v08je"]
+atlas = ExtResource("2_0l22u")
+region = Rect2(1988, 0, 284, 212)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_no4j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s65u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wobx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh8hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev03l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yft3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfssv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsnbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v08je")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Theme" id="Theme_ff4am"]
+Button/colors/font_outline_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_ff4am")
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_0l22u")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_left = 450.0
+offset_top = 750.0
+offset_right = 1730.0
+offset_bottom = 1470.0
+rotation = -0.7822362
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 474.0
+offset_bottom = 538.0
+theme = SubResource("Theme_drpar")
+text = "CREDITS
+
+Judith Gastell (Graphics)
+
+Tobias Rojahn (Dev)
+
+Felix Wagner (Dev)
+
+(Music)"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1050, 550)
+sprite_frames = SubResource("SpriteFrames_no4j4")
+autoplay = "default"
+frame_progress = 0.1933754
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 75)
+offset_left = 350.0
+offset_top = 550.0
+offset_right = 500.0
+offset_bottom = 625.0
+theme = SubResource("Theme_ff4am")
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

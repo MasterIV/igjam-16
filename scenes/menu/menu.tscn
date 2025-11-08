@@ -65,3 +65,4 @@ text = "Credits"
 [connection signal="pressed" from="VBoxContainer/easy_game" to="." method="_on_easy_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/normal_game" to="." method="_on_normal_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/hard_game" to="." method="_on_hard_game_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
