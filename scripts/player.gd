@@ -18,6 +18,18 @@ var sprites = {
 	Enums.Direction.RIGHT: "walk_right",
 }
 
+var target_destination: Vector2 = position;
+
+func _ready() -> void:
+	target_destination = position
+
+func _physics_process(delta):
+	if position == target_destination:
+		return
+		
+	var movement = target_destination - position
+	move_and_collide(movement)
+
 func move(dir: Enums.Direction) -> void:
 	var current_tile = tile_map.local_to_map(position)
 	var target_tile = current_tile + directions[dir]
@@ -28,7 +40,7 @@ func move(dir: Enums.Direction) -> void:
 		
 	update_sprite(dir)
 	var tween = create_tween()
-	tween.tween_property(self, "position", tile_map.map_to_local(target_tile), 0.5)
+	tween.tween_property(self, "target_destination", tile_map.map_to_local(target_tile), 0.5)
 	
 	await tween.finished
 	# we can youse a custom data layer on the tileset to check for traps or goal here?
