@@ -51,4 +51,5 @@ position = Vector2(16, 16)
 tile_map = NodePath("../Ground")
 start_position = Vector2(5, 5)
 
-[node name="Program" parent="." instance=ExtResource("4_5xbjy")]
+[node name="Program" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_5xbjy")]
+player = NodePath("../Player")

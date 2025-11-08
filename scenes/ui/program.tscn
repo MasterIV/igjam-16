@@ -2,26 +2,29 @@
 
 [ext_resource type="Script" uid="uid://cma5oxacv7gge" path="res://scripts/program.gd" id="1_2x2b2"]
 
-[node name="Program" type="CanvasLayer"]
+[node name="Program" type="Node"]
 script = ExtResource("1_2x2b2")
 rules = Array[int]([2, 0, 3])
 
-[node name="Panel" type="Panel" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
 custom_minimum_size = Vector2(0, 200)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(0, 200)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -20.0
+offset_top = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 10
@@ -29,7 +32,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Instructions" type="HBoxContainer" parent="MarginContainer"]
+[node name="Instructions" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10

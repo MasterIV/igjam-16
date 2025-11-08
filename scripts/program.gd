@@ -1,11 +1,11 @@
-extends CanvasLayer
+extends Node
 
 @export var rules: Array[Enums.Direction]
 @export var player: Player;
 
 const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 
-@onready var container = $MarginContainer/Instructions
+@onready var container = $CanvasLayer/MarginContainer/Instructions
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
