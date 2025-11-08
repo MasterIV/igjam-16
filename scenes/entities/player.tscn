@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bd2fsx4vg20q1"]
+[gd_scene load_steps=70 format=3 uid="uid://bd2fsx4vg20q1"]
 
 [ext_resource type="Script" uid="uid://bx1fnv1jifb6f" path="res://scripts/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://ifi5rbu3ngmg" path="res://assets/vibe_3_spritesheet.png" id="2_1ie0h"]
@@ -163,6 +163,38 @@ region = Rect2(0, 100, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ss7kx"]
 atlas = ExtResource("2_1ie0h")
 region = Rect2(0, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvgni"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(0, 1300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28nan"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(100, 1300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ath"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(200, 1300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jof7"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(300, 1300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l0sx"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(0, 1400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb8ru"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(100, 1400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkcs3"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(200, 1400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4npp"]
+atlas = ExtResource("2_1ie0h")
+region = Rect2(300, 1400, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnykm"]
 atlas = ExtResource("2_1ie0h")
@@ -394,6 +426,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kvgni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28nan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30ath")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jof7")
+}],
+"loop": false,
+"name": &"victory",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l0sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb8ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkcs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4npp")
+}],
+"loop": true,
+"name": &"victory_loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dnykm")
 }, {
 "duration": 1.0,
@@ -469,9 +535,9 @@ script = ExtResource("1_08t41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ni07")
-animation = &"death_loop"
+animation = &"victory_loop"
 autoplay = "walk_down"
-frame_progress = 0.048844308
+frame_progress = 0.10994749
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
