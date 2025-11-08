@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	
 	if progress > duration:
 		rule.set_progress(0);
-		player.move(directions[rules[current]]);
+		player.move(directions[rule.direction]);
 		
 		progress = 0;
 		current += 1;
