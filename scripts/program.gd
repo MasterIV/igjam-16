@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @export var rules: Array[Enums.Direction]
 @export var player: Player;
-@export var duration = 2;
+@export var duration = 2.0;
 
 const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 
