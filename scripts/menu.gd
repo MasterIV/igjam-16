@@ -8,5 +8,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_start_game_pressed() -> void:
-	Game.start(Game.DIFFICULTY_SETTINGS.Easy)
+func start_game(difficulty):
+	Game.start(difficulty)
+
+func _on_easy_game_pressed() -> void:
+	start_game(Game.DIFFICULTY_SETTINGS.Easy)
+
+func _on_normal_game_pressed() -> void:
+	start_game(Game.DIFFICULTY_SETTINGS.Normal)
+
+func _on_hard_game_pressed() -> void:
+	start_game(Game.DIFFICULTY_SETTINGS.Hard)
