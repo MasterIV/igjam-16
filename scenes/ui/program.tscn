@@ -9,7 +9,7 @@ rules = Array[int]([2, 0, 3])
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 230)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -36,3 +36,17 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -226.0
+offset_right = 53.5
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Progam Rules"
