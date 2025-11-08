@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://f1feuhiyuewj"]
+
+[ext_resource type="Texture2D" uid="uid://br3xjadl4gf6p" path="res://assets/menu/story_bg.png" id="1_j3wfd"]
+[ext_resource type="Script" uid="uid://b6or1s0r7v4dx" path="res://scenes/menu/story_intro.gd" id="1_nefnr"]
+[ext_resource type="FontFile" uid="uid://c4lmk3urfr8w0" path="res://assets/menu/Robot_Font.otf" id="2_nefnr"]
+
+[sub_resource type="Theme" id="Theme_k8igd"]
+default_font = ExtResource("2_nefnr")
+Button/font_sizes/font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 31
+
+[sub_resource type="Theme" id="Theme_5sueo"]
+Button/font_sizes/font_size = 40
+
+[node name="StoryIntro" type="Node2D"]
+script = ExtResource("1_nefnr")
+
+[node name="background" type="Sprite2D" parent="."]
+texture_repeat = 1
+position = Vector2(640, 360)
+texture = ExtResource("1_j3wfd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 670.0
+offset_bottom = 670.0
+theme = SubResource("Theme_k8igd")
+bbcode_enabled = true
+text = "You are the last Senior Developer of this upcoming robotics company. Your CEO has replaced all your colleagues with AI tools and VIBE CODED the newest model VIB-3.
+
+Today is the big presentation and all shareholders are present. It is your job to make sure the presentation works flawlessly.
+
+You do not have a programming interface for the robot because that does not vibe. You can flip the command queue of the robot live (just click on the commands at the bottom).
+
+Don't crash, don't fail. Or you're fired.
+
+Just...
+
+PILOT THE DAMN ROBOT"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 590.0
+offset_top = 600.0
+offset_right = 840.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5sueo")
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

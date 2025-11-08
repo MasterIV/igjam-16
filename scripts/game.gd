@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	
 func start(difficulty: float) -> void:
 	COMMAND_DURATION = difficulty;
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn");
+	get_tree().change_scene_to_file("res://scenes/menu/story_intro.tscn");
 	paused = false;
 
 func lose() -> void:
