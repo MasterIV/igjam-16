@@ -1,19 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtrdesl76hfi0"]
+[gd_scene load_steps=9 format=3 uid="uid://dtrdesl76hfi0"]
 
 [ext_resource type="Script" uid="uid://hny2u3ag72n5" path="res://scripts/trap.gd" id="1_501p6"]
-[ext_resource type="Texture2D" uid="uid://crxp0faunk0lh" path="res://assets/trap.png" id="2_vx3nm"]
+[ext_resource type="Texture2D" uid="uid://4l3lshqutf6e" path="res://assets/electricity_animation.png" id="2_501p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1j4"]
 size = Vector2(50, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx3nm"]
+atlas = ExtResource("2_501p6")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3xrh"]
+atlas = ExtResource("2_501p6")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8lct"]
+atlas = ExtResource("2_501p6")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16hvs"]
+atlas = ExtResource("2_501p6")
+region = Rect2(300, 100, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rb2u7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx3nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3xrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8lct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16hvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3xrh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Trap" type="Area2D"]
 script = ExtResource("1_501p6")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vx3nm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_sx1j4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rb2u7")
+autoplay = "default"
+frame_progress = 0.63155216
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
