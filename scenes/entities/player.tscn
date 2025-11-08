@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bd2fsx4vg20q1"]
+[gd_scene load_steps=25 format=3 uid="uid://bd2fsx4vg20q1"]
 
 [ext_resource type="Script" uid="uid://bx1fnv1jifb6f" path="res://scripts/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://ifi5rbu3ngmg" path="res://assets/vibe_3_spritesheet.png" id="2_1ie0h"]
@@ -186,6 +186,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08t41"]
+size = Vector2(53, 52)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_08t41")
 
@@ -194,3 +197,7 @@ sprite_frames = SubResource("SpriteFrames_4ni07")
 animation = &"walk_up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_08t41")
