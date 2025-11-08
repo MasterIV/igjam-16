@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 @export var rules: Array[Enums.Direction]
 @export var player: Player;
@@ -6,7 +6,7 @@ extends Node
 
 const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 
-@onready var container = $CanvasLayer/MarginContainer/Instructions
+@onready var container = $MarginContainer/Instructions
 
 var current = 0;
 var progress = 0;

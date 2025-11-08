@@ -2,23 +2,21 @@
 
 [ext_resource type="Script" uid="uid://cma5oxacv7gge" path="res://scripts/program.gd" id="1_2x2b2"]
 
-[node name="Program" type="Node"]
+[node name="Program" type="CanvasLayer"]
 script = ExtResource("1_2x2b2")
 rules = Array[int]([2, 0, 3])
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 230)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -200.0
+offset_top = -230.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 200)
 anchors_preset = 12
 anchor_top = 1.0
@@ -32,12 +30,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Instructions" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="Instructions" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
