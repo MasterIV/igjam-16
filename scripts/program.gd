@@ -11,13 +11,6 @@ const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 var current = 0;
 var progress = 0;
 
-var directions = {
-	Enums.Direction.UP: Vector2(0, -1),
-	Enums.Direction.DOWN: Vector2(0, 1),
-	Enums.Direction.LEFT: Vector2(-1, 0),
-	Enums.Direction.RIGHT: Vector2(1, 0),
-}
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for r in rules:
@@ -32,7 +25,7 @@ func _process(delta: float) -> void:
 	
 	if progress > duration:
 		rule.set_progress(0);
-		player.move(directions[rule.direction]);
+		player.move(rule.direction);
 		
 		progress = 0;
 		current += 1;
