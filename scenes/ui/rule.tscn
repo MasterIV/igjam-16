@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dba1exaij4j6n"]
+
+[ext_resource type="Script" uid="uid://dg2sh7sw70dnl" path="res://scripts/rule.gd" id="1_44uvw"]
+[ext_resource type="Texture2D" uid="uid://ctydx3dq862wv" path="res://assets/arrows.png" id="2_t56ii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4lpt"]
+atlas = ExtResource("2_t56ii")
+region = Rect2(0, 0, 100, 100)
+
+[node name="Rule" type="VBoxContainer" node_paths=PackedStringArray("icon")]
+custom_minimum_size = Vector2(120, 0)
+theme_override_constants/separation = 5
+script = ExtResource("1_44uvw")
+icon = NodePath("Container/MarginContainer/VBoxContainer/TextureRect")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Container"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_k4lpt")
+
+[node name="Label" type="Label" parent="Container/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Flip Me!"
+horizontal_alignment = 1
+
+[connection signal="button_up" from="Container/Button" to="." method="_on_button_button_up"]
