@@ -51,16 +51,4 @@ position = Vector2(16, 16)
 tile_map = NodePath("../Ground")
 start_position = Vector2(5, 5)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Program" parent="Control" instance=ExtResource("4_5xbjy")]
-layout_mode = 1
-offset_top = -40.0
-offset_right = 1280.0
-offset_bottom = 180.0
+[node name="Program" parent="." instance=ExtResource("4_5xbjy")]
