@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrdesl76hfi0"]
+
+[ext_resource type="Script" uid="uid://c0u5bhtwjb3qk" path="res://scripts/goal.gd" id="1_sx1j4"]
+[ext_resource type="Texture2D" uid="uid://crxp0faunk0lh" path="res://assets/trap.png" id="2_62q8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1j4"]
+size = Vector2(97, 97)
+
+[node name="Trap" type="Area2D"]
+script = ExtResource("1_sx1j4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_62q8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_sx1j4")
+disabled = true
