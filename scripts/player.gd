@@ -11,6 +11,13 @@ var directions = {
 	Enums.Direction.RIGHT: Vector2i(1, 0),
 }
 
+var sprites = {
+	Enums.Direction.UP: "walk_up",
+	Enums.Direction.DOWN: "walk_down",
+	Enums.Direction.LEFT: "walk_left",
+	Enums.Direction.RIGHT: "walk_right",
+}
+
 func move(dir: Enums.Direction) -> void:
 	var current_tile = tile_map.local_to_map(position)
 	var target_tile = current_tile + directions[dir]
@@ -27,13 +34,6 @@ func move(dir: Enums.Direction) -> void:
 	# we can youse a custom data layer on the tileset to check for traps or goal here?
 	print("moved") 
 
-func update_sprite(dir) -> void:
-	if dir.x > 0:
-		$AnimatedSprite2D.play("walk_right")
-	elif dir.y < 0:
-		$AnimatedSprite2D.play("walk_up")
-	elif dir.y > 0:
-		$AnimatedSprite2D.play("walk_down")
-	else:
-		$AnimatedSprite2D.play("walk_left")
+func update_sprite(dir: Enums.Direction) -> void:
+	$AnimatedSprite2D.play(sprites[dir])
 		
