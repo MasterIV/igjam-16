@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7yn4kugdbbbb"]
+[gd_scene load_steps=23 format=3 uid="uid://c7yn4kugdbbbb"]
 
 [ext_resource type="Script" uid="uid://p3sjfxsnjmxm" path="res://scenes/menu/credits.gd" id="1_0l22u"]
 [ext_resource type="FontFile" uid="uid://c4lmk3urfr8w0" path="res://assets/menu/Robot_Font.otf" id="1_ff4am"]
 [ext_resource type="Texture2D" uid="uid://rfygwpf1hn6t" path="res://assets/konservenfabrik.png" id="2_0l22u"]
 [ext_resource type="Texture2D" uid="uid://ifi5rbu3ngmg" path="res://assets/vibe_3_spritesheet.png" id="4_drpar"]
+[ext_resource type="Texture2D" uid="uid://de6ksgekiar4w" path="res://assets/btn_spritesheet.png" id="4_wobx1"]
+[ext_resource type="Theme" uid="uid://jod7ms7yrfri" path="res://scenes/menu/menu_theme.tres" id="5_oh8hr"]
 
 [sub_resource type="Theme" id="Theme_drpar"]
 Label/font_sizes/font_size = 45
@@ -73,10 +75,17 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Theme" id="Theme_ff4am"]
-Button/colors/font_outline_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
-Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("1_ff4am")
+[sub_resource type="AtlasTexture" id="AtlasTexture_no4j4"]
+atlas = ExtResource("4_wobx1")
+region = Rect2(0, 0, 250, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ohh"]
+atlas = ExtResource("4_wobx1")
+region = Rect2(0, 160, 250, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o708d"]
+atlas = ExtResource("4_wobx1")
+region = Rect2(0, 80, 250, 80)
 
 [sub_resource type="Animation" id="Animation_wobx1"]
 length = 0.001
@@ -181,14 +190,23 @@ sprite_frames = SubResource("SpriteFrames_no4j4")
 autoplay = "default"
 frame_progress = 0.1933754
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(150, 75)
-offset_left = 350.0
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 250.0
 offset_top = 550.0
 offset_right = 500.0
-offset_bottom = 625.0
-theme = SubResource("Theme_ff4am")
+offset_bottom = 630.0
+texture_normal = SubResource("AtlasTexture_no4j4")
+texture_pressed = SubResource("AtlasTexture_q8ohh")
+texture_hover = SubResource("AtlasTexture_o708d")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+theme = ExtResource("5_oh8hr")
 text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
