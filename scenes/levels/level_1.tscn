@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5txymq1fn5w5"]
+[gd_scene load_steps=12 format=4 uid="uid://5txymq1fn5w5"]
 
 [ext_resource type="Script" uid="uid://pvole4aldpeg" path="res://scripts/level_1.gd" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_bswci"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ce5jp5k6pp6pt" path="res://scenes/entities/goal.tscn" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="6_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://dk6w2qu52yr2t" path="res://scenes/entities/enemy.tscn" id="7_oc4kc"]
+[ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="9_dga24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("2_s8va5")
@@ -191,3 +192,13 @@ enemies = [NodePath("../Enemy")]
 position = Vector2(850, 150)
 path = Array[int]([0, 3, 1, 2])
 tile_map = NodePath("../Ground")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -850.0
+offset_top = -1250.0
+offset_right = 2150.0
+offset_bottom = 1720.0
+texture = ExtResource("9_dga24")
+expand_mode = 5
+stretch_mode = 1
