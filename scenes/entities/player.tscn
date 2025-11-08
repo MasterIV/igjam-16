@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bd2fsx4vg20q1"]
+[gd_scene load_steps=26 format=3 uid="uid://bd2fsx4vg20q1"]
 
 [ext_resource type="Script" uid="uid://bx1fnv1jifb6f" path="res://scripts/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://ifi5rbu3ngmg" path="res://assets/vibe_3_spritesheet.png" id="2_1ie0h"]
+[ext_resource type="AudioStream" uid="uid://cd3pt8v04rpa2" path="res://assets/sounds/Start.mp3" id="3_1ie0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42nxq"]
 atlas = ExtResource("2_1ie0h")
@@ -201,3 +202,6 @@ autoplay = "walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_08t41")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1ie0h")

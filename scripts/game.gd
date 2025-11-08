@@ -2,15 +2,15 @@ extends Node
 
 var DIFFICULTY_SETTINGS = { "Easy": 2.0, "Normal": 1.5, "Hard": 1.0 }
 
-var COMMAND_DURATION = DIFFICULTY_SETTINGS.Easy
+var command_duration = DIFFICULTY_SETTINGS.Easy
 
 var paused = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func start(difficulty: float) -> void:
-	COMMAND_DURATION = difficulty;
+	command_duration = difficulty;
 	get_tree().change_scene_to_file("res://scenes/menu/story_intro.tscn");
 	paused = false;
 

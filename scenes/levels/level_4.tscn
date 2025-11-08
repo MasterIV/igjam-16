@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=4 uid="uid://bybq52xnao1mq"]
+
+[ext_resource type="Texture2D" uid="uid://b7hmf4m7fikp0" path="res://assets/walls_floor_spritesheet.png" id="1_5vn0v"]
+[ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_ts8eg"]
+[ext_resource type="PackedScene" uid="uid://ce5jp5k6pp6pt" path="res://scenes/entities/goal.tscn" id="3_um320"]
+[ext_resource type="PackedScene" uid="uid://clmqnchetb318" path="res://scenes/menu/menu.tscn" id="4_glw47"]
+[ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="5_4wsov"]
+[ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="6_qvnao"]
+[ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="7_hsvsk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
+texture = ExtResource("1_5vn0v")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rus8k"]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Ground"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_dga24")
+
+[node name="Level4" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAEAAAAAAAAAAEAAQAEAAAAAAAAAAIAAQAEAAAAAAAAAAMAAQAEAAAAAAAAAAQAAQAEAAAAAAAAAAUAAQAEAAAAAAAAAAYAAQAEAAAAAAAAAAcAAQAEAAAAAAABAAcAAQAEAAAAAAACAAcAAQAEAAAAAAADAAcAAQAEAAAAAAAEAAcAAQAEAAAAAAAFAAcAAQAEAAAAAAAGAAcAAQAEAAAAAAAHAAcAAQAEAAAAAAAIAAcAAQAEAAAAAAAJAAcAAQAEAAAAAAABAAAAAQAEAAAAAAACAAAAAQAEAAAAAAADAAAAAQAEAAAAAAAEAAAAAQAEAAAAAAAFAAAAAQAEAAAAAAAGAAAAAQAEAAAAAAAHAAAAAQAEAAAAAAAIAAAAAQAEAAAAAAAJAAAAAQAEAAAAAAAKAAAAAQAEAAAAAAAKAAcAAQAEAAAAAAAKAAgAAQAEAAAAAAAKAAkAAQAEAAAAAAAKAAoAAQAEAAAAAAAKAAsAAQAEAAAAAAALAAsAAQAEAAAAAAAMAAsAAQAEAAAAAAANAAsAAQAEAAAAAAAOAAsAAQAEAAAAAAAPAAsAAQAEAAAAAAAQAAsAAQAEAAAAAAAQAAoAAQAEAAAAAAAQAAkAAQAEAAAAAAAQAAgAAQAEAAAAAAAQAAcAAQAEAAAAAAAQAAYAAQAEAAAAAAAQAAUAAQAEAAAAAAAQAAQAAQAEAAAAAAAQAAMAAQAEAAAAAAAQAAIAAQAEAAAAAAAQAAEAAQAEAAAAAAAQAAAAAQAEAAAAAAAPAAAAAQAEAAAAAAAOAAAAAQAEAAAAAAANAAAAAQAEAAAAAAAMAAAAAQAEAAAAAAALAAAAAQAEAAAAAAAHAAQAAQABAAEAAAAHAAMAAQAGAAIAAAAHAAIAAQABAAEAAAAHAAEAAQAEAAEAAAAGAAEAAQADAAIAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQADAAMAAAABAAEAAQABAAMAAAABAAIAAQAEAAIAAAABAAMAAQAEAAEAAAABAAQAAQADAAEAAAABAAUAAQAAAAMAAAABAAYAAQADAAMAAAACAAYAAQADAAEAAAACAAUAAQAEAAIAAAACAAQAAQADAAEAAAACAAMAAQAGAAEAAAACAAIAAQAEAAIAAAADAAIAAQADAAEAAAADAAMAAQADAAEAAAADAAQAAQADAAEAAAADAAUAAQADAAEAAAADAAYAAQAEAAEAAAAEAAYAAQABAAEAAAAEAAUAAQADAAEAAAAEAAQAAQAEAAEAAAAEAAMAAQADAAIAAAAEAAIAAQAEAAEAAAAFAAIAAQAEAAIAAAAFAAMAAQABAAEAAAAFAAQAAQAEAAIAAAAFAAUAAQADAAEAAAAFAAYAAQADAAEAAAAGAAYAAQAEAAEAAAAGAAUAAQAEAAIAAAAGAAQAAQABAAEAAAAGAAMAAQAEAAIAAAAGAAIAAQADAAEAAAAHAAUAAQADAAIAAAAHAAYAAQAEAAIAAAAIAAYAAQAEAAIAAAAIAAUAAQAEAAIAAAAIAAQAAQABAAEAAAAIAAMAAQABAAEAAAAIAAIAAQADAAEAAAAIAAEAAQAEAAEAAAAJAAEAAQAEAAEAAAAJAAIAAQABAAEAAAAJAAMAAQABAAEAAAAJAAQAAQAEAAIAAAAJAAUAAQADAAIAAAAJAAYAAQADAAEAAAAKAAYAAQACAAMAAAAKAAUAAQABAAEAAAAKAAQAAQAEAAIAAAAKAAMAAQAEAAEAAAAKAAIAAQABAAEAAAAKAAEAAQADAAIAAAALAAEAAQADAAEAAAALAAIAAQAEAAIAAAALAAMAAQABAAEAAAALAAQAAQABAAEAAAALAAUAAQABAAMAAAALAAYAAQAEAAEAAAALAAcAAQAEAAEAAAALAAgAAQAEAAIAAAALAAkAAQAAAAMAAAALAAoAAQADAAMAAAAMAAoAAQAEAAEAAAAMAAkAAQABAAEAAAAMAAgAAQAEAAEAAAAMAAcAAQABAAEAAAAMAAYAAQADAAEAAAAMAAUAAQADAAEAAAAMAAQAAQAEAAEAAAAMAAMAAQAEAAEAAAAMAAIAAQADAAEAAAAMAAEAAQABAAEAAAANAAEAAQADAAIAAAANAAIAAQAEAAEAAAANAAMAAQAEAAIAAAANAAQAAQAEAAIAAAANAAUAAQAEAAIAAAANAAYAAQAEAAEAAAANAAcAAQADAAIAAAANAAgAAQABAAEAAAANAAkAAQADAAIAAAANAAoAAQADAAEAAAAOAAoAAQAEAAIAAAAOAAkAAQAEAAEAAAAOAAgAAQADAAIAAAAOAAcAAQAEAAEAAAAOAAYAAQAEAAEAAAAOAAUAAQAEAAIAAAAOAAQAAQADAAEAAAAOAAMAAQADAAIAAAAOAAIAAQAEAAIAAAAOAAEAAQAEAAIAAAAPAAEAAQACAAMAAAAPAAIAAQABAAMAAAAPAAMAAQADAAEAAAAPAAQAAQAEAAIAAAAPAAUAAQAEAAEAAAAPAAYAAQADAAEAAAAPAAcAAQAEAAIAAAAPAAgAAQAEAAEAAAAPAAkAAQAAAAMAAAAPAAoAAQACAAMAAAA=")
+tile_set = SubResource("TileSet_rus8k")
+
+[node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("2_ts8eg")]
+position = Vector2(350, 350)
+tile_map = NodePath("../Ground")
+
+[node name="Goal" parent="." instance=ExtResource("3_um320")]
+position = Vector2(1350, 950)
+next_level = ExtResource("4_glw47")
+
+[node name="Program" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_4wsov")]
+rules = Array[int]([1, 1, 3, 0, 2])
+player = NodePath("../Player")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -850.0
+offset_top = -1250.0
+offset_right = 2150.0
+offset_bottom = 1750.0
+texture = ExtResource("6_qvnao")
+expand_mode = 5
+stretch_mode = 1
+
+[node name="Trap" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(250, 650)
+
+[node name="Trap5" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(350, 650)
+
+[node name="Trap6" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(450, 650)
+
+[node name="Trap7" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(550, 650)
+
+[node name="Trap8" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(650, 650)
+
+[node name="Trap9" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(750, 650)
+
+[node name="Trap10" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(850, 650)
+
+[node name="Trap11" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(950, 650)
+
+[node name="Trap12" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(350, 150)
+
+[node name="Trap13" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(450, 150)
+
+[node name="Trap14" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(550, 150)
+
+[node name="Trap15" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(650, 150)
+
+[node name="Trap16" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(750, 150)
+
+[node name="Trap17" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(850, 150)
+
+[node name="Trap18" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(950, 150)
+
+[node name="Trap19" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1050, 150)
+
+[node name="Trap20" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1150, 150)
+
+[node name="Trap21" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1250, 150)
+
+[node name="Trap22" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1350, 150)
+
+[node name="Trap23" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1450, 150)
+
+[node name="Trap24" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1250, 1050)
+
+[node name="Trap25" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1350, 1050)
+
+[node name="Trap26" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1450, 1050)
+
+[node name="Trap2" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(150, 250)
+rotation = 1.5707964
+
+[node name="Trap3" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(150, 350)
+rotation = 1.5707964
+
+[node name="Trap4" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(150, 450)
+rotation = 1.5707964
+
+[node name="Trap27" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1150, 850)
+rotation = 1.5707964
+
+[node name="Trap28" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1150, 750)
+rotation = 1.5707964
+
+[node name="Trap29" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1150, 650)
+rotation = 1.5707964
+
+[node name="Trap30" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 850)
+rotation = 1.5707964
+
+[node name="Trap31" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 750)
+rotation = 1.5707964
+
+[node name="Trap32" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 650)
+rotation = 1.5707964
+
+[node name="Trap33" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 550)
+rotation = 1.5707964
+
+[node name="Trap34" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 450)
+rotation = 1.5707964
+
+[node name="Trap35" parent="." instance=ExtResource("7_hsvsk")]
+position = Vector2(1550, 350)
+rotation = 1.5707964

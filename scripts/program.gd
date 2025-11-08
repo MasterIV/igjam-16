@@ -4,7 +4,7 @@ extends CanvasLayer
 @export var player: Player;
 @export var enemies: Array[Enemy];
 
-var duration = Game.COMMAND_DURATION;
+var duration = Game.command_duration;
 
 const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 
