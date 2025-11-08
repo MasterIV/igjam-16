@@ -1,16 +1,12 @@
 extends Node2D
 
-@export var start_level: PackedScene;
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-
-func _on_button_button_up() -> void:
-	get_tree().change_scene_to_packed(start_level)
+func _on_start_game_pressed() -> void:
+	Game.start(Game.DIFFICULTY_SETTINGS.Easy)
