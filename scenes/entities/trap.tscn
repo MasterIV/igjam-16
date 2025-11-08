@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crxp0faunk0lh" path="res://assets/trap.png" id="2_vx3nm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1j4"]
-size = Vector2(49, 50)
+size = Vector2(50, 50)
 
 [node name="Trap" type="Area2D"]
 script = ExtResource("1_501p6")
@@ -13,6 +13,6 @@ script = ExtResource("1_501p6")
 texture = ExtResource("2_vx3nm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1)
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_sx1j4")
 disabled = true
