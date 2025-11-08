@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://5txymq1fn5w5"]
+[gd_scene load_steps=11 format=4 uid="uid://5txymq1fn5w5"]
 
 [ext_resource type="Texture2D" uid="uid://dd4noi7443h72" path="res://assets/tileset.png" id="1_014kd"]
 [ext_resource type="Script" uid="uid://pvole4aldpeg" path="res://scripts/level_1.gd" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://clmqnchetb318" path="res://scenes/menu/menu.tscn" id="5_s8va5"]
 [ext_resource type="PackedScene" uid="uid://ce5jp5k6pp6pt" path="res://scenes/entities/goal.tscn" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="6_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://dk6w2qu52yr2t" path="res://scenes/entities/enemy.tscn" id="7_oc4kc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("1_014kd")
@@ -51,13 +53,19 @@ tile_set = SubResource("TileSet_rus8k")
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("2_bswci")]
 position = Vector2(350, 350)
 tile_map = NodePath("../Ground")
-start_position = Vector2(4, 4)
 
 [node name="Goal" parent="." instance=ExtResource("5_sk5k4")]
 position = Vector2(150, 250)
+next_level = ExtResource("5_s8va5")
 
 [node name="Trap" parent="." instance=ExtResource("6_oc4kc")]
 position = Vector2(550, 450)
 
-[node name="Program" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_5xbjy")]
+[node name="Program" parent="." node_paths=PackedStringArray("player", "enemies") instance=ExtResource("4_5xbjy")]
 player = NodePath("../Player")
+enemies = [NodePath("../Enemy")]
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("7_oc4kc")]
+position = Vector2(850, 150)
+path = Array[int]([0, 3, 1, 2])
+tile_map = NodePath("../Ground")

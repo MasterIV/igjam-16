@@ -2,7 +2,9 @@ extends CanvasLayer
 
 @export var rules: Array[Enums.Direction]
 @export var player: Player;
-@export var duration = 2.0;
+@export var enemies: Array[Enemy];
+
+var duration = Game.COMMAND_DURATION;
 
 const RULE_SCENE: PackedScene = preload("res://scenes/ui/rule.tscn")
 
@@ -20,12 +22,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Game.paused: return;
+	
 	progress += delta;
 	var rule = container.get_child(current)
 	
 	if progress > duration:
 		rule.set_progress(0);
 		player.move(rule.direction);
+		for e in enemies: e.move();
 		
 		progress = 0;
 		current += 1;
