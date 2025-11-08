@@ -13,7 +13,7 @@ enum move_states {STANDING, MOVING}
 var is_moving = move_states.STANDING
 var move_dir = Vector2(0, 0)
 var move_time = 0
-const MOVE_SPEED = 1000
+const MOVE_SPEED = 1.0
 
 enum alive_states {ALIVE, DEAD}
 var is_alive = alive_states.ALIVE
@@ -48,6 +48,7 @@ func move(dir: Vector2) -> bool:
 		return false
 
 	var target_tile = tile_map.get_cell_tile_data(current_position + dir)
+
 	if target_tile.get_collision_polygons_count(0) > 0:
 		return false
 	move_dir = dir * 100
