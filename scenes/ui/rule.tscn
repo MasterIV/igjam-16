@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dba1exaij4j6n"]
+[gd_scene load_steps=5 format=3 uid="uid://dba1exaij4j6n"]
 
 [ext_resource type="Script" uid="uid://dg2sh7sw70dnl" path="res://scripts/rule.gd" id="1_44uvw"]
 [ext_resource type="Texture2D" uid="uid://ctydx3dq862wv" path="res://assets/arrows.png" id="2_t56ii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44uvw"]
+bg_color = Color(0.30588236, 0.5686275, 0.7176471, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4lpt"]
 atlas = ExtResource("2_t56ii")
@@ -15,6 +18,7 @@ icon = NodePath("Container/MarginContainer/VBoxContainer/TextureRect")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_44uvw")
 
 [node name="Container" type="PanelContainer" parent="."]
 layout_mode = 2

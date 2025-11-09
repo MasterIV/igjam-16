@@ -12,10 +12,11 @@ func _ready() -> void:
 	sound_player.volume_db = -6.0
 	sound_player.play()
 	
-	load("res://assets/sounds/Down.mp3")
-	load("res://assets/sounds/Up.mp3")
-	load("res://assets/sounds/Right.mp3")
-	load("res://assets/sounds/Left.mp3")
+	#load("res://assets/sounds/Down.mp3")
+	#load("res://assets/sounds/Up.mp3")
+	#load("res://assets/sounds/Right.mp3")
+	#load("res://assets/sounds/Left.mp3")
+	load("res://assets/sounds/Hover.mp3")
 	load("res://assets/sounds/Malfunction.mp3")
 
 func _physics_process(_delta):
@@ -55,17 +56,18 @@ func victory() -> void:
 func update_sprite(dir: Enums.Direction) -> void:
 	$AnimatedSprite2D.play(Enums.direction_to_sprite[dir])
 		
-func play_sfx(dir: Enums.Direction) -> void:
-	if randi() % 100 +1 >= 90:
-		var sound_file = ""
-		match dir:
-			Enums.Direction.UP:
-				sound_file = "res://assets/sounds/Up.mp3"
-			Enums.Direction.DOWN:
-				sound_file = "res://assets/sounds/Down.mp3"
-			Enums.Direction.LEFT:
-				sound_file = "res://assets/sounds/Left.mp3"
-			Enums.Direction.RIGHT:
-				sound_file = "res://assets/sounds/Right.mp3"
-		sound_player.stream = load(sound_file)
-		sound_player.play()
+func play_sfx(_dir: Enums.Direction) -> void:
+	sound_player.stream = load("res://assets/sounds/Hover.mp3")
+	#if randi() % 100 +1 >= 90:
+	#	var sound_file = ""
+	#	match dir:
+	#		Enums.Direction.UP:
+	#			sound_file = "res://assets/sounds/Up.mp3"
+	#		Enums.Direction.DOWN:
+	#			sound_file = "res://assets/sounds/Down.mp3"
+	#		Enums.Direction.LEFT:
+	#			sound_file = "res://assets/sounds/Left.mp3"
+	#		Enums.Direction.RIGHT:
+	#			sound_file = "res://assets/sounds/Right.mp3"
+	#	sound_player.stream = load(sound_file)
+	sound_player.play()
