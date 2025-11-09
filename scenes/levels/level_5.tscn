@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7hmf4m7fikp0" path="res://assets/walls_floor_spritesheet.png" id="1_mxx4w"]
 [ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_vvoq0"]
 [ext_resource type="PackedScene" uid="uid://ce5jp5k6pp6pt" path="res://scenes/entities/goal.tscn" id="3_tqnj0"]
-[ext_resource type="PackedScene" uid="uid://clmqnchetb318" path="res://scenes/menu/menu.tscn" id="4_dwyms"]
+[ext_resource type="PackedScene" uid="uid://pgmgbffgjhfl" path="res://scenes/levels/level_6.tscn" id="4_vvoq0"]
 [ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="5_6xwso"]
 [ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="6_5ke18"]
 [ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="7_j14br"]
@@ -81,7 +81,7 @@ tile_map = NodePath("../Ground")
 
 [node name="Goal" parent="." instance=ExtResource("3_tqnj0")]
 position = Vector2(1750, 250)
-next_level = ExtResource("4_dwyms")
+next_level = ExtResource("4_vvoq0")
 
 [node name="Program" parent="." node_paths=PackedStringArray("player", "enemies") instance=ExtResource("5_6xwso")]
 rules = Array[int]([1, 3, 1])

@@ -1,0 +1,295 @@
+[gd_scene load_steps=12 format=4 uid="uid://pgmgbffgjhfl"]
+
+[ext_resource type="Texture2D" uid="uid://b7hmf4m7fikp0" path="res://assets/walls_floor_spritesheet.png" id="1_e18e5"]
+[ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_m5qie"]
+[ext_resource type="PackedScene" uid="uid://ce5jp5k6pp6pt" path="res://scenes/entities/goal.tscn" id="3_kydov"]
+[ext_resource type="PackedScene" uid="uid://clmqnchetb318" path="res://scenes/menu/menu.tscn" id="4_uwlxl"]
+[ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="5_4wfvb"]
+[ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="6_tqv5a"]
+[ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="7_ppjov"]
+[ext_resource type="PackedScene" uid="uid://dk6w2qu52yr2t" path="res://scenes/entities/enemy.tscn" id="8_pafwe"]
+[ext_resource type="PackedScene" uid="uid://c4kdcblu23ndx" path="res://scenes/animation/transition.tscn" id="9_gf2l7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
+texture = ExtResource("1_e18e5")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+6:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rus8k"]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Ground"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_dga24")
+
+[node name="Level4" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQABAAAAAAAUAAAAAQABAAAAAAAVAAAAAQACAAAAAAAVAAEAAQACAAEAAAAVAAIAAQACAAEAAAAVAAMAAQACAAEAAAAVAAQAAQACAAEAAAAVAAUAAQACAAEAAAAVAAYAAQACAAEAAAAVAAcAAQACAAEAAAAVAAgAAQACAAEAAAAVAAkAAQACAAEAAAAVAAoAAQACAAEAAAAVAAsAAQACAAEAAAAVAAwAAQACAAEAAAAVAA0AAQACAAEAAAAVAA4AAQACAAEAAAAVAA8AAQACAAIAAAAUAA8AAQABAAIAAAATAA8AAQABAAIAAAASAA8AAQABAAIAAAARAA8AAQABAAIAAAAQAA8AAQABAAIAAAAPAA8AAQABAAIAAAAOAA8AAQABAAIAAAANAA8AAQABAAIAAAAMAA8AAQABAAIAAAALAA8AAQABAAIAAAAKAA8AAQABAAIAAAAJAA8AAQABAAIAAAAIAA8AAQABAAIAAAAHAA8AAQABAAIAAAAGAA8AAQABAAIAAAAFAA8AAQABAAIAAAAEAA8AAQABAAIAAAADAA8AAQABAAIAAAACAA8AAQABAAIAAAABAA8AAQABAAIAAAAAAA8AAQAAAAIAAAAAAA4AAQAAAAEAAAAAAA0AAQAAAAEAAAAAAAwAAQAAAAEAAAAAAAsAAQAAAAEAAAAAAAoAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAEAAQAAAAEAAAALAAoAAQADAAEAAAALAAkAAQAEAAAAAAALAAgAAQADAAIAAAALAAcAAQAEAAEAAAALAAYAAQAEAAIAAAALAAUAAQAEAAAAAAALAAQAAQAEAAEAAAALAAMAAQAEAAAAAAALAAIAAQAEAAAAAAALAAEAAQAEAAAAAAAKAAEAAQAEAAAAAAAJAAEAAQAEAAAAAAAIAAEAAQADAAEAAAAHAAEAAQAEAAAAAAAGAAEAAQAEAAIAAAAFAAEAAQAEAAAAAAAEAAEAAQAEAAAAAAADAAEAAQAEAAAAAAACAAEAAQAEAAAAAAABAAEAAQAEAAAAAAABAAIAAQAEAAIAAAABAAMAAQAEAAEAAAABAAQAAQAEAAAAAAABAAUAAQADAAMAAAABAAYAAQABAAEAAAABAAcAAQADAAEAAAABAAgAAQABAAEAAAABAAkAAQAGAAEAAAABAAoAAQADAAEAAAABAAsAAQABAAEAAAABAAwAAQADAAEAAAABAA0AAQAEAAEAAAABAA4AAQAEAAEAAAACAA4AAQADAAEAAAACAA0AAQADAAIAAAACAAwAAQAEAAEAAAACAAsAAQADAAEAAAACAAoAAQAGAAIAAAACAAkAAQAEAAEAAAACAAgAAQAEAAEAAAACAAcAAQADAAIAAAACAAYAAQAEAAIAAAACAAUAAQADAAIAAAACAAQAAQAEAAAAAAACAAMAAQABAAEAAAACAAIAAQAEAAEAAAADAAIAAQABAAEAAAADAAMAAQAEAAIAAAADAAQAAQAEAAAAAAADAAUAAQACAAMAAAADAAYAAQADAAEAAAADAAcAAQAEAAIAAAADAAgAAQABAAMAAAADAAkAAQADAAIAAAADAAoAAQADAAEAAAADAAsAAQADAAEAAAADAAwAAQADAAIAAAADAA0AAQAEAAIAAAADAA4AAQAAAAMAAAAEAA4AAQABAAEAAAAEAA0AAQAEAAEAAAAEAAwAAQAEAAIAAAAEAAsAAQAEAAIAAAAEAAoAAQABAAEAAAAEAAkAAQADAAIAAAAEAAgAAQADAAEAAAAEAAcAAQAEAAEAAAAEAAYAAQAEAAEAAAAEAAUAAQADAAIAAAAEAAQAAQAEAAAAAAAEAAMAAQAEAAIAAAAEAAIAAQABAAEAAAAFAAIAAQAEAAAAAAAFAAMAAQAEAAAAAAAFAAQAAQAEAAAAAAAFAAUAAQAEAAAAAAAFAAYAAQAEAAAAAAAFAAcAAQAEAAAAAAAFAAgAAQAEAAIAAAAFAAkAAQAEAAIAAAAFAAoAAQAEAAEAAAAFAAsAAQAEAAAAAAAFAAwAAQAEAAAAAAAFAA0AAQAEAAAAAAAFAA4AAQADAAIAAAAGAA4AAQADAAIAAAAGAA0AAQAEAAAAAAAGAAwAAQAEAAIAAAAGAAsAAQAEAAAAAAAGAAoAAQADAAMAAAAGAAkAAQAAAAMAAAAGAAgAAQABAAEAAAAGAAcAAQADAAEAAAAGAAYAAQABAAEAAAAGAAUAAQABAAMAAAAGAAQAAQADAAMAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAHAAIAAQAEAAAAAAAHAAMAAQAEAAAAAAAHAAQAAQADAAIAAAAHAAUAAQABAAEAAAAHAAYAAQAGAAEAAAAHAAcAAQAEAAEAAAAHAAgAAQADAAEAAAAHAAkAAQAEAAEAAAAHAAoAAQADAAEAAAAHAAsAAQAEAAAAAAAHAAwAAQAGAAIAAAAHAA0AAQAEAAAAAAAHAA4AAQADAAEAAAAIAA4AAQAEAAIAAAAIAA0AAQAEAAAAAAAIAAwAAQADAAIAAAAIAAsAAQAEAAAAAAAIAAoAAQABAAEAAAAIAAkAAQABAAEAAAAIAAgAAQADAAIAAAAIAAcAAQADAAEAAAAIAAYAAQADAAIAAAAIAAUAAQADAAIAAAAIAAQAAQADAAEAAAAIAAMAAQAEAAAAAAAIAAIAAQABAAEAAAAJAAIAAQAEAAAAAAAJAAMAAQAEAAAAAAAJAAQAAQAEAAIAAAAJAAUAAQAEAAAAAAAJAAYAAQAEAAAAAAAJAAcAAQAEAAAAAAAJAAgAAQAEAAAAAAAJAAkAAQAEAAAAAAAJAAoAAQABAAEAAAAJAAsAAQAEAAAAAAAJAAwAAQABAAEAAAAJAA0AAQAEAAAAAAAJAA4AAQAEAAEAAAAKAA4AAQABAAEAAAAKAA0AAQAEAAAAAAAKAAwAAQAEAAEAAAAKAAsAAQAEAAAAAAAKAAoAAQADAAEAAAAKAAkAAQAEAAAAAAAKAAgAAQAEAAIAAAAKAAcAAQADAAIAAAAKAAYAAQAEAAIAAAAKAAUAAQAEAAAAAAAKAAQAAQAEAAEAAAAKAAMAAQABAAEAAAAKAAIAAQAEAAIAAAALAAsAAQAEAAAAAAALAAwAAQADAAIAAAALAA0AAQAEAAAAAAALAA4AAQADAAMAAAAMAA4AAQAEAAIAAAAMAA0AAQAEAAAAAAAMAAwAAQAEAAEAAAAMAAsAAQAEAAAAAAAMAAoAAQACAAMAAAAMAAkAAQAEAAAAAAAMAAgAAQAEAAIAAAAMAAcAAQAEAAIAAAAMAAYAAQADAAEAAAAMAAUAAQAEAAAAAAAMAAQAAQABAAEAAAAMAAMAAQAEAAAAAAAMAAIAAQAEAAIAAAAMAAEAAQADAAIAAAANAAEAAQAEAAAAAAANAAIAAQAEAAAAAAANAAMAAQAEAAAAAAANAAQAAQADAAEAAAANAAUAAQAEAAAAAAANAAYAAQAEAAAAAAANAAcAAQAEAAAAAAANAAgAAQAEAAAAAAANAAkAAQAEAAAAAAANAAoAAQABAAEAAAANAAsAAQAEAAAAAAANAAwAAQAEAAAAAAANAA0AAQAEAAAAAAANAA4AAQADAAIAAAAOAA4AAQABAAEAAAAOAA0AAQAGAAIAAAAOAAwAAQAAAAMAAAAOAAsAAQABAAEAAAAOAAoAAQABAAEAAAAOAAkAAQAEAAIAAAAOAAgAAQAEAAEAAAAOAAcAAQAEAAEAAAAOAAUAAQABAAMAAAAOAAQAAQACAAMAAAAOAAMAAQADAAIAAAAOAAIAAQADAAEAAAAOAAEAAQAEAAAAAAAPAAEAAQAEAAAAAAAPAAIAAQAEAAAAAAAPAAMAAQAEAAAAAAAPAAQAAQABAAMAAAAPAAUAAQAEAAIAAAAPAAYAAQADAAIAAAAPAAcAAQABAAEAAAAPAAgAAQABAAEAAAAPAAkAAQAAAAMAAAAPAAoAAQADAAMAAAAPAAsAAQABAAEAAAAPAAwAAQAEAAEAAAAPAA0AAQADAAEAAAAPAA4AAQAEAAEAAAAQAA4AAQABAAEAAAAQAA0AAQAEAAAAAAAQAAwAAQAEAAAAAAAQAAsAAQABAAEAAAAQAAoAAQADAAEAAAAQAAkAAQADAAEAAAAQAAgAAQAEAAAAAAAQAAcAAQAEAAAAAAAQAAYAAQAEAAAAAAAQAAUAAQAEAAAAAAAQAAQAAQAGAAEAAAAQAAMAAQAEAAEAAAAQAAIAAQADAAEAAAAQAAEAAQADAAIAAAARAAEAAQADAAEAAAARAAIAAQADAAEAAAARAAMAAQADAAEAAAARAAQAAQADAAIAAAARAAUAAQAEAAAAAAARAAYAAQAEAAIAAAARAAcAAQABAAEAAAARAAgAAQAEAAAAAAARAAkAAQADAAEAAAARAAoAAQABAAEAAAARAAsAAQADAAEAAAARAAwAAQAEAAAAAAARAA0AAQAEAAAAAAARAA4AAQABAAEAAAASAA4AAQADAAEAAAASAA0AAQAEAAAAAAASAAwAAQAEAAAAAAASAAsAAQAEAAIAAAASAAoAAQACAAMAAAASAAkAAQADAAIAAAASAAgAAQAEAAAAAAASAAcAAQAGAAIAAAASAAYAAQAEAAIAAAASAAUAAQAEAAAAAAASAAQAAQADAAIAAAASAAMAAQADAAEAAAASAAIAAQABAAEAAAASAAEAAQADAAEAAAATAAEAAQAEAAEAAAATAAIAAQABAAEAAAATAAMAAQAEAAEAAAATAAQAAQAEAAIAAAATAAUAAQAEAAAAAAATAAYAAQAEAAAAAAATAAcAAQAEAAAAAAATAAgAAQAEAAAAAAATAAkAAQADAAIAAAATAAoAAQAEAAAAAAATAAsAAQAEAAAAAAATAAwAAQAEAAAAAAATAA0AAQAEAAAAAAATAA4AAQADAAIAAAAUAA4AAQACAAMAAAAUAA0AAQAEAAAAAAAUAAwAAQAEAAAAAAAUAAsAAQAEAAAAAAAUAAoAAQAEAAAAAAAUAAkAAQAEAAEAAAAUAAgAAQAEAAEAAAAUAAcAAQAEAAEAAAAUAAYAAQAGAAEAAAAUAAUAAQAAAAMAAAAUAAQAAQAEAAIAAAAUAAMAAQADAAIAAAAUAAIAAQAEAAIAAAAUAAEAAQABAAMAAAAOAAYAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_rus8k")
+
+[node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("2_m5qie")]
+position = Vector2(1150, 750)
+tile_map = NodePath("../Ground")
+
+[node name="Goal" parent="." instance=ExtResource("3_kydov")]
+position = Vector2(1550, 1350)
+next_level = ExtResource("4_uwlxl")
+
+[node name="Program" parent="." node_paths=PackedStringArray("player", "enemies") instance=ExtResource("5_4wfvb")]
+visible = false
+rules = Array[int]([2, 2, 0, 0])
+player = NodePath("../Player")
+enemies = [NodePath("../Enemy1"), NodePath("../Enemy2"), NodePath("../Enemy3"), NodePath("../Enemy4"), NodePath("../Enemy5"), NodePath("../Enemy6"), NodePath("../Enemy7"), NodePath("../Enemy8")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -850.0
+offset_top = -1250.0
+offset_right = 4150.0
+offset_bottom = 3750.0
+texture = ExtResource("6_tqv5a")
+expand_mode = 5
+stretch_mode = 1
+
+[node name="Trap" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(750, 450)
+
+[node name="Trap44" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(250, 550)
+
+[node name="Trap2" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1250, 450)
+
+[node name="Trap7" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1350, 450)
+
+[node name="Trap3" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1150, 450)
+
+[node name="Trap4" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1050, 450)
+
+[node name="Trap5" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(950, 450)
+
+[node name="Trap6" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(850, 450)
+
+[node name="Trap8" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1050, 1050)
+
+[node name="Trap12" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1150, 1050)
+
+[node name="Trap13" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1650, 1050)
+
+[node name="Trap14" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1750, 1050)
+
+[node name="Trap9" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(950, 1050)
+
+[node name="Trap10" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(850, 1050)
+
+[node name="Trap11" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(750, 1050)
+
+[node name="Trap15" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1950, 1450)
+
+[node name="Trap16" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1850, 1450)
+
+[node name="Trap17" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1750, 1450)
+
+[node name="Trap18" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1650, 1450)
+
+[node name="Trap19" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1550, 1450)
+
+[node name="Trap20" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 1450)
+
+[node name="Trap21" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1350, 1450)
+
+[node name="Trap22" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1250, 1450)
+
+[node name="Trap23" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 1150)
+rotation = 1.5707964
+
+[node name="Trap24" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 650)
+rotation = 1.5707964
+
+[node name="Trap40" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1550, 550)
+rotation = 1.5707964
+
+[node name="Trap41" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1550, 850)
+rotation = 1.5707964
+
+[node name="Trap42" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1550, 750)
+rotation = 1.5707964
+
+[node name="Trap43" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1550, 650)
+rotation = 1.5707964
+
+[node name="Trap25" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 750)
+rotation = 1.5707964
+
+[node name="Trap26" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 850)
+rotation = 1.5707964
+
+[node name="Trap27" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 950)
+rotation = 1.5707964
+
+[node name="Trap28" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(1450, 1050)
+rotation = 1.5707964
+
+[node name="Trap29" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(2050, 450)
+rotation = 1.5707964
+
+[node name="Trap30" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(2050, 350)
+rotation = 1.5707964
+
+[node name="Trap31" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(2050, 250)
+rotation = 1.5707964
+
+[node name="Trap32" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(650, 650)
+rotation = 1.5707964
+
+[node name="Trap33" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(650, 850)
+rotation = 1.5707964
+
+[node name="Trap34" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(650, 750)
+rotation = 1.5707964
+
+[node name="Trap35" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(350, 950)
+rotation = 1.5707964
+
+[node name="Trap36" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(350, 1050)
+rotation = 1.5707964
+
+[node name="Trap37" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(350, 1150)
+rotation = 1.5707964
+
+[node name="Trap38" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(350, 1250)
+rotation = 1.5707964
+
+[node name="Trap39" parent="." instance=ExtResource("7_ppjov")]
+position = Vector2(350, 1350)
+rotation = 1.5707964
+
+[node name="Enemy1" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(1350, 550)
+path = Array[int]([3, 3, 3, 3, 0, 0, 0, 0, 2, 2, 2, 2, 1, 1, 1, 1])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(550, 1150)
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(550, 750)
+path = Array[int]([2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(150, 150)
+path = Array[int]([1, 1, 1, 1, 3, 3, 2, 2, 0, 0, 0, 0])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy5" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(750, 150)
+path = Array[int]([3, 3, 1, 1, 2, 2, 1, 1, 0, 0, 3, 3, 0, 0, 2, 2])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy6" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(1550, 350)
+path = Array[int]([2, 2, 0, 0, 3, 3, 0, 0, 2, 3, 1, 1, 2, 2, 1, 1, 3, 3])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy7" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(1650, 550)
+path = Array[int]([3, 3, 3, 1, 1, 1, 2, 2, 2, 0, 0, 0])
+tile_map = NodePath("../Ground")
+
+[node name="Enemy8" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("8_pafwe")]
+position = Vector2(1950, 1050)
+path = Array[int]([3, 3, 0, 0, 0, 3, 1, 1, 1, 1, 2, 2, 2, 0])
+tile_map = NodePath("../Ground")
+
+[node name="Transition" parent="." instance=ExtResource("9_gf2l7")]
