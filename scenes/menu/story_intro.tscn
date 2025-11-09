@@ -26,12 +26,14 @@ region = Rect2(0, 80, 250, 80)
 [node name="StoryIntro" type="Node2D"]
 script = ExtResource("1_nefnr")
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="Sprite2D" parent="CanvasLayer"]
 texture_repeat = 1
 position = Vector2(640, 360)
 texture = ExtResource("1_j3wfd")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 670.0
@@ -50,7 +52,7 @@ Just...
 
 PILOT THE DAMN ROBOT"
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="Button" type="TextureButton" parent="CanvasLayer"]
 offset_left = 588.0
 offset_top = 610.0
 offset_right = 838.0
@@ -59,7 +61,7 @@ texture_normal = SubResource("AtlasTexture_u8k3o")
 texture_pressed = SubResource("AtlasTexture_i1ojk")
 texture_hover = SubResource("AtlasTexture_jqayj")
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
@@ -68,4 +70,4 @@ text = "Start Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://clmqnchetb318"]
+[gd_scene load_steps=9 format=3 uid="uid://clmqnchetb318"]
 
 [ext_resource type="Script" uid="uid://dnw0i2jh6rvea" path="res://scripts/menu.gd" id="1_e0arn"]
-[ext_resource type="Texture2D" uid="uid://b3fr8w56rw6cs" path="res://assets/menu/menu_bg.png" id="3_y1o0p"]
 [ext_resource type="Theme" uid="uid://jod7ms7yrfri" path="res://scenes/menu/menu_theme.tres" id="4_037ec"]
 [ext_resource type="Texture2D" uid="uid://de6ksgekiar4w" path="res://assets/btn_spritesheet.png" id="4_y1o0p"]
 [ext_resource type="Texture2D" uid="uid://bkg021n33848n" path="res://assets/Title.png" id="5_y1o0p"]
@@ -22,18 +21,18 @@ region = Rect2(0, 80, 250, 80)
 [node name="menu" type="Node2D"]
 script = ExtResource("1_e0arn")
 
-[node name="bg" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 360)
-texture = ExtResource("3_y1o0p")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1280, 720)
-offset_right = 1280.0
-offset_bottom = 720.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.48178947, 0.48178947, 0.48178947, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1280, 720)
 offset_left = -439.2877
 offset_top = 342.08148
@@ -42,29 +41,20 @@ offset_bottom = 1207.554
 rotation = -0.7822362
 color = Color(0, 0, 0, 1)
 
-[node name="difficulty_label" type="Label" parent="."]
-visible = false
-offset_left = 49.0
-offset_top = 209.0
-offset_right = 472.0
-offset_bottom = 268.0
-theme = ExtResource("4_037ec")
-text = "Launch a new game:"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 125.0
 offset_top = 310.0
 offset_right = 915.0
 offset_bottom = 590.0
 theme_override_constants/separation = 20
 
-[node name="easy_game" type="TextureButton" parent="VBoxContainer"]
+[node name="easy_game" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_r8yej")
 texture_pressed = SubResource("AtlasTexture_3y2rt")
 texture_hover = SubResource("AtlasTexture_t0a87")
 
-[node name="Label" type="Label" parent="VBoxContainer/easy_game"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/easy_game"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
@@ -73,13 +63,13 @@ text = "Easy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="normal_game" type="TextureButton" parent="VBoxContainer"]
+[node name="normal_game" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_r8yej")
 texture_pressed = SubResource("AtlasTexture_3y2rt")
 texture_hover = SubResource("AtlasTexture_t0a87")
 
-[node name="Label" type="Label" parent="VBoxContainer/normal_game"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/normal_game"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
@@ -88,13 +78,13 @@ text = "Normal"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="hard_game" type="TextureButton" parent="VBoxContainer"]
+[node name="hard_game" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_r8yej")
 texture_pressed = SubResource("AtlasTexture_3y2rt")
 texture_hover = SubResource("AtlasTexture_t0a87")
 
-[node name="Label" type="Label" parent="VBoxContainer/hard_game"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/hard_game"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
@@ -103,7 +93,7 @@ text = "Hard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="credits" type="TextureButton" parent="."]
+[node name="credits" type="TextureButton" parent="CanvasLayer"]
 offset_left = 125.0
 offset_top = 625.0
 offset_right = 375.0
@@ -112,7 +102,7 @@ texture_normal = SubResource("AtlasTexture_r8yej")
 texture_pressed = SubResource("AtlasTexture_3y2rt")
 texture_hover = SubResource("AtlasTexture_t0a87")
 
-[node name="Label" type="Label" parent="credits"]
+[node name="Label" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
@@ -121,27 +111,33 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameName" type="Label" parent="."]
-visible = false
-offset_left = 80.0
-offset_top = 75.0
-offset_right = 435.0
-offset_bottom = 175.0
-theme = ExtResource("4_037ec")
-theme_override_font_sizes/font_size = 75
-text = "VIB-3 Fixing"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(929, 369.00003)
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -700.0
+offset_top = -693.00006
+offset_right = 300.0
+offset_bottom = 307.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.70154965, 0.70154965)
+size_flags_horizontal = 8
 texture = ExtResource("5_y1o0p")
 
-[node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(350, 150)
+[node name="Logo" type="TextureRect" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = -15.0
+offset_right = 1230.0
+offset_bottom = 576.0
 scale = Vector2(0.5173758, 0.5173758)
 texture = ExtResource("6_r8yej")
 
-[connection signal="pressed" from="VBoxContainer/easy_game" to="." method="_on_easy_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/normal_game" to="." method="_on_normal_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/hard_game" to="." method="_on_hard_game_pressed"]
-[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/easy_game" to="." method="_on_easy_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/normal_game" to="." method="_on_normal_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/hard_game" to="." method="_on_hard_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/credits" to="." method="_on_credits_pressed"]
