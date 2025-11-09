@@ -150,6 +150,7 @@ animation = &"walk_down"
 autoplay = "walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_8dejf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
