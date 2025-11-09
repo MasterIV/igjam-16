@@ -25,7 +25,8 @@ func lose() -> void:
 	
 func win(next_level: PackedScene) -> void:
 	paused = true;
-	# todo victory dance
+	get_tree().current_scene.find_child("Player").victory();
+	await get_tree().create_timer(2).timeout;
 	await fade_out();
 	get_tree().change_scene_to_packed(next_level);
 	paused = false;

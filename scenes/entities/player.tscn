@@ -677,7 +677,7 @@ script = ExtResource("1_08t41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ni07")
-animation = &"death"
+animation = &"look_down"
 autoplay = "walk_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]

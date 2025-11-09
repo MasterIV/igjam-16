@@ -46,6 +46,11 @@ func die() -> void:
 	sound_player.stream = load("res://assets/sounds/Malfunction.mp3")
 	sound_player.play()
 	$AnimatedSprite2D.play("death_loop")
+	
+func victory() -> void:
+	$AnimatedSprite2D.play("victory")
+	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.play("victory_loop")
 
 func update_sprite(dir: Enums.Direction) -> void:
 	$AnimatedSprite2D.play(Enums.direction_to_sprite[dir])
