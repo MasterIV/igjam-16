@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="igjam-16"
+config/name="VIB-3 Fixing"
+config/description="A game for the IGJam16 2025, made by Konservenfabrik"
 run/main_scene="uid://clmqnchetb318"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
