@@ -7,6 +7,8 @@ var command_duration = DIFFICULTY_SETTINGS.Easy
 
 var paused = false
 
+var retry_scene: String
+
 func _process(_delta: float) -> void:
 	pass
 	
@@ -20,7 +22,8 @@ func lose() -> void:
 	get_tree().current_scene.find_child("Player").die();
 	await get_tree().create_timer(5).timeout;
 	await fade_out();
-	get_tree().reload_current_scene();
+	retry_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://scenes/menu/game_over.tscn")
 	paused = false;
 	
 func win(next_level: PackedScene) -> void:
