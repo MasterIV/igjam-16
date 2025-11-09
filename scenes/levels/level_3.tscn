@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dnjt01e7fxvhm"]
+[gd_scene load_steps=11 format=4 uid="uid://dnjt01e7fxvhm"]
 
 [ext_resource type="Texture2D" uid="uid://b7hmf4m7fikp0" path="res://assets/walls_floor_spritesheet.png" id="1_ftfob"]
 [ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="2_fkk1g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="5_2bnyt"]
 [ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="6_n6eey"]
 [ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="7_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://c4kdcblu23ndx" path="res://scenes/animation/transition.tscn" id="8_ugcn1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
 texture = ExtResource("1_ftfob")
@@ -101,3 +102,5 @@ position = Vector2(650, 450)
 [node name="Trap2" parent="." instance=ExtResource("7_fkk1g")]
 position = Vector2(350, 250)
 rotation = 1.5707964
+
+[node name="Transition" parent="." instance=ExtResource("8_ugcn1")]

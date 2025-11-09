@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5txymq1fn5w5"]
+[gd_scene load_steps=12 format=4 uid="uid://5txymq1fn5w5"]
 
 [ext_resource type="Texture2D" uid="uid://b7hmf4m7fikp0" path="res://assets/walls_floor_spritesheet.png" id="2_es4qh"]
 [ext_resource type="PackedScene" uid="uid://bd2fsx4vg20q1" path="res://scenes/entities/player.tscn" id="3_s0ovu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrdesl76hfi0" path="res://scenes/entities/trap.tscn" id="6_tdlkl"]
 [ext_resource type="PackedScene" uid="uid://cljg4oyyhwf56" path="res://scenes/ui/program.tscn" id="7_bc127"]
 [ext_resource type="PackedScene" uid="uid://dk6w2qu52yr2t" path="res://scenes/entities/enemy.tscn" id="8_dl0q5"]
+[ext_resource type="PackedScene" uid="uid://c4kdcblu23ndx" path="res://scenes/animation/transition.tscn" id="9_8883n"]
 [ext_resource type="Texture2D" uid="uid://dp3da4ik3w07p" path="res://assets/bg.png" id="9_eanp0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dga24"]
@@ -97,12 +98,4 @@ texture = ExtResource("9_eanp0")
 expand_mode = 5
 stretch_mode = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-z_index = 5
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Transition" parent="." instance=ExtResource("9_8883n")]

@@ -16,6 +16,7 @@ func _ready() -> void:
 	load("res://assets/sounds/Up.mp3")
 	load("res://assets/sounds/Right.mp3")
 	load("res://assets/sounds/Left.mp3")
+	load("res://assets/sounds/Malfunction.mp3")
 
 func _physics_process(_delta):
 	if position == target_destination:
@@ -42,6 +43,8 @@ func die() -> void:
 	$AnimatedSprite2D.play("death")
 	$Explosion.play("default")
 	await $AnimatedSprite2D.animation_finished
+	sound_player.stream = load("res://assets/sounds/Malfunction.mp3")
+	sound_player.play()
 	$AnimatedSprite2D.play("death_loop")
 
 func update_sprite(dir: Enums.Direction) -> void:
