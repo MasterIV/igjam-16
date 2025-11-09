@@ -8,8 +8,10 @@ var target_destination: Vector2 = position;
 
 func _ready() -> void:
 	target_destination = position
+	
 	sound_player.volume_db = -6.0
 	sound_player.play()
+	
 	load("res://assets/sounds/Down.mp3")
 	load("res://assets/sounds/Up.mp3")
 	load("res://assets/sounds/Right.mp3")
@@ -31,8 +33,21 @@ func move(dir: Enums.Direction) -> void:
 		return
 		
 	update_sprite(dir)
+	play_sfx(dir)
+	
 	var tween = create_tween()
 	tween.tween_property(self, "target_destination", tile_map.map_to_local(target_tile), 0.5)
+	
+func die() -> void:
+	$AnimatedSprite2D.play("death")
+	$Explosion.play("default")
+	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.play("death_loop")
+
+func update_sprite(dir: Enums.Direction) -> void:
+	$AnimatedSprite2D.play(Enums.direction_to_sprite[dir])
+		
+func play_sfx(dir: Enums.Direction) -> void:
 	if randi() % 100 +1 >= 90:
 		var sound_file = ""
 		match dir:
@@ -46,7 +61,3 @@ func move(dir: Enums.Direction) -> void:
 				sound_file = "res://assets/sounds/Right.mp3"
 		sound_player.stream = load(sound_file)
 		sound_player.play()
-
-func update_sprite(dir: Enums.Direction) -> void:
-	$AnimatedSprite2D.play(Enums.direction_to_sprite[dir])
-		

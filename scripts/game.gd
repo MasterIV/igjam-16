@@ -15,6 +15,9 @@ func start(difficulty: float) -> void:
 	paused = false;
 
 func lose() -> void:
+	paused = true
+	get_tree().current_scene.find_child("Player").die()
+	await get_tree().create_timer(5).timeout
 	get_tree().reload_current_scene();
 	paused = false;
 	
