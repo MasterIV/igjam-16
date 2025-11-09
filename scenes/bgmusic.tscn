@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4osw7tipuei"]
+
+[ext_resource type="AudioStream" uid="uid://idv2y7gys1bb" path="res://assets/sounds/Goofybot_1.mp3" id="1_um84k"]
+
+[node name="Bgmusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_um84k")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true

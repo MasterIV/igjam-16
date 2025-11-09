@@ -182,7 +182,7 @@ Tobias Rojahn (Dev)
 
 Felix Wagner (Dev)
 
-(Music)"
+Elio (Music)"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1050, 550)

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 Enums="*res://scripts/enums.gd"
 Game="*res://scripts/game.gd"
+Bgmusic="*res://scenes/bgmusic.tscn"
 
 [display]
 
